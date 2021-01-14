@@ -52,8 +52,14 @@ Temporary Items
 .apdisk
 
 ### Terraform ###
+# Concrete file
+aws/main.tf
+
 # Local .terraform directories
 **/.terraform/*
+
+# Lock file
+*.hcl
 
 # .tfstate files
 *.tfstate

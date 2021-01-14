@@ -1,0 +1,25 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "ap-northeast-2"
+}
+
+resource "aws_instance" "default" {
+  ami                    = "ami-0d26352ab37619e7b" # CentOS 7
+  instance_type          = "t2.nano"
+  vpc_security_group_ids = ["sg-****"]
+  subnet_id              = "subnet-****"
+  key_name               = "my-keypair"
+  tags = {
+    Name = "****"
+    Version = "0.0.1"
+  }
+}
